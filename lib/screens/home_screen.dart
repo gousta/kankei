@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  static String tag = 'home-page';
+class HomeScreen extends StatelessWidget {
+  static String tag = 'home-screen';
 
   @override
   Widget build(BuildContext context) {

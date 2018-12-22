@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kankei/screens/home_screen.dart';
+import 'package:kankei/screens/register_screen.dart';
 
-class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
+class LoginScreen extends StatefulWidget {
+  static String tag = 'login-screen';
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _LoginScreenState createState() => new _LoginScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -50,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
           minWidth: 200.0,
           height: 42.0,
           onPressed: () {
-            Navigator.of(context).pushNamed(HomePage.tag);
+            Navigator.of(context).pushNamed(HomeScreen.tag);
           },
           color: Colors.lightBlueAccent,
           child: Text('Log In', style: TextStyle(color: Colors.white)),
@@ -58,12 +59,14 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final forgotLabel = FlatButton(
+    final registerButton = FlatButton(
       child: Text(
-        'Forgot password?',
+        'Create an account',
         style: TextStyle(color: Colors.black54),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(RegisterScreen.tag);
+      },
     );
 
     return Scaffold(
@@ -80,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
-            forgotLabel
+            registerButton
           ],
         ),
       ),

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:kankei/screens/home_screen.dart';
 import 'package:kankei/screens/login_screen.dart';
+import 'package:kankei/screens/register_screen.dart';
 
 void main() => runApp(Kankei());
 
 class Kankei extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
-    LoginPage.tag: (context) => LoginPage(),
-    HomePage.tag: (context) => HomePage(),
+    LoginScreen.tag: (context) => LoginScreen(),
+    HomeScreen.tag: (context) => HomeScreen(),
+    RegisterScreen.tag: (context) => RegisterScreen(),
   };
 
   @override
@@ -17,9 +19,8 @@ class Kankei extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
-        fontFamily: 'Nunito',
       ),
-      home: LoginPage(),
+      home: LoginScreen(),
       routes: routes,
     );
   }
