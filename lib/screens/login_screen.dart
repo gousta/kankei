@@ -22,8 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
-      autofocus: true,
-      initialValue: null,
       decoration: InputDecoration(
         hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
@@ -32,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     final password = TextFormField(
-      autofocus: false,
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',

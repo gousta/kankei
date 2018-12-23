@@ -7,8 +7,6 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final inputEmail = TextFormField(
       keyboardType: TextInputType.emailAddress,
-      autofocus: true,
-      initialValue: null,
       decoration: InputDecoration(
         hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
@@ -17,9 +15,6 @@ class RegisterScreen extends StatelessWidget {
     );
 
     final inputPassword = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      autofocus: true,
-      initialValue: null,
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
@@ -29,9 +24,6 @@ class RegisterScreen extends StatelessWidget {
     );
 
     final inputShopName = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      autofocus: true,
-      initialValue: null,
       decoration: InputDecoration(
         hintText: 'Shop Name',
         contentPadding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
@@ -60,8 +52,8 @@ class RegisterScreen extends StatelessWidget {
       padding: EdgeInsets.all(28.0),
       child: Column(
         children: <Widget>[
-          inputShopName,
           inputEmail,
+          inputPassword,
           inputShopName,
           registerButton
         ],
