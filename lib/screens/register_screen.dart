@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kankei/widgets/header_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
   static String tag = 'register-screen';
@@ -31,38 +32,45 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
 
-    final registerButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 32.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(4.0),
-        shadowColor: Colors.lightBlueAccent.shade100,
-        elevation: 2.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 48.0,
-          onPressed: () {},
-          color: Colors.lightBlueAccent,
-          child: Text('Register', style: TextStyle(color: Colors.white)),
-        ),
-      ),
+    final registerButton = MaterialButton(
+      minWidth: 200.0,
+      height: 48.0,
+      onPressed: () {},
+      color: Colors.lightBlueAccent,
+      child: Text('Continue', style: TextStyle(color: Colors.white)),
     );
 
-    final body = Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.all(28.0),
-      child: Column(
-        children: <Widget>[
-          inputEmail,
-          inputPassword,
-          inputShopName,
-          registerButton
-        ],
+    final backToHomeButton = FlatButton(
+      child: Text(
+        'Back to login',
+        style: TextStyle(color: Colors.black54),
       ),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
     );
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: body,
+      body: Center(
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.only(left: 32.0, right: 32.0),
+          children: <Widget>[
+            Header(label: 'Create an account'),
+            SizedBox(height: 48.0),
+            inputEmail,
+            SizedBox(height: 8.0),
+            inputPassword,
+            SizedBox(height: 8.0),
+            inputShopName,
+            SizedBox(height: 32.0),
+            registerButton,
+            SizedBox(height: 16.0),
+            backToHomeButton
+          ],
+        ),
+      ),
     );
   }
 }
